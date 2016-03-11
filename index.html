@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angular Application</title>
+
+    <style>
+        label {
+            display: block;
+            text-transform: uppercase;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div ng-app="app" class="app">
+        <div ng-controller="ContactController as ctrl">
+            <ul>
+                <li ng-repeat="contact in ctrl.contacts">
+                    <contact-card
+                            name="contact.name"
+                            email="contact.email"
+                            phone="contact.phone" />
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/angular.js"></script>
+    <script src="js/app/app.js"></script>
+    <script src="js/app/controllers/ContactController.js"></script>
+    <script src="js/app/directives/ContactCard.js"></script>
+
+</body>
+</html>
